@@ -25,7 +25,8 @@ const terminalContent = function* (lines) {
             id: lineIndex,
             text: lines[lineIndex].text,
             cmd: false,
-            current: false
+            current: false,
+            colour: lines[lineIndex].colour
           })
 
           yield buffer
@@ -41,7 +42,8 @@ const terminalContent = function* (lines) {
                 id: lineIndex,
                 text: frames[0].text,
                 cmd: false,
-                current: true
+                current: true,
+                colour: lines[lineIndex].colour
               })
             }
           }
@@ -96,7 +98,8 @@ const terminalContent = function* (lines) {
             id: lineIndex,
             text: '',
             cmd: lines[lineIndex].cmd,
-            current: true
+            current: true,
+            colour: lines[lineIndex].colour
           })
         }
 

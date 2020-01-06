@@ -172,7 +172,8 @@ var terminalContent = /*#__PURE__*/regeneratorRuntime.mark(function terminalCont
             id: lineIndex,
             text: lines[lineIndex].text,
             cmd: false,
-            current: false
+            current: false,
+            colour: lines[lineIndex].colour
           });
 
           _context.next = 17;
@@ -199,7 +200,8 @@ var terminalContent = /*#__PURE__*/regeneratorRuntime.mark(function terminalCont
                 id: lineIndex,
                 text: frames[0].text,
                 cmd: false,
-                current: true
+                current: true,
+                colour: lines[lineIndex].colour
               });
             }
           }
@@ -278,7 +280,8 @@ var terminalContent = /*#__PURE__*/regeneratorRuntime.mark(function terminalCont
                 id: lineIndex,
                 text: '',
                 cmd: lines[lineIndex].cmd,
-                current: true
+                current: true,
+                colour: lines[lineIndex].colour
               });
             }
 
