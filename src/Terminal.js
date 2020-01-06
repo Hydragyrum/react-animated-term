@@ -4,13 +4,14 @@ import PropTypes from 'prop-types'
 
 const cursor = <span className="Terminal-cursor" />
 const prompt = <span className="Terminal-prompt">$ </span>
+const colouredText = (text, colour) => <span style={{color: colour}}>{text}</span>
 
 const renderLines = lines => {
   return lines.map(line => {
     return (
       <React.Fragment key={line.id}>
         {line.cmd ? prompt : ''}
-        {line.colour ? <span style={{color: line.colour}}>line.text</span> : line.text}
+        {line.colour ? colouredText(line.text, line.colour) : line.text}
         {line.current ? cursor : ''}
         <br />
       </React.Fragment>

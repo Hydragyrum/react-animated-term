@@ -8,6 +8,13 @@ var prompt = React.createElement(
   { className: 'Terminal-prompt' },
   '$ '
 );
+var colouredText = function colouredText(text, colour) {
+  return React.createElement(
+    'span',
+    { style: { color: colour } },
+    text
+  );
+};
 
 var renderLines = function renderLines(lines) {
   return lines.map(function (line) {
@@ -15,11 +22,7 @@ var renderLines = function renderLines(lines) {
       React.Fragment,
       { key: line.id },
       line.cmd ? prompt : '',
-      line.colour ? React.createElement(
-        'span',
-        { style: { color: line.colour } },
-        'line.text'
-      ) : line.text,
+      line.colour ? colouredText(line.text, line.colour) : line.text,
       line.current ? cursor : '',
       React.createElement('br', null)
     );
