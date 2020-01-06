@@ -18,6 +18,7 @@ var colouredText = function colouredText(text, colour) {
 
 var renderLines = function renderLines(lines) {
   return lines.map(function (line) {
+    console.log(line);
     return React.createElement(
       React.Fragment,
       { key: line.id },

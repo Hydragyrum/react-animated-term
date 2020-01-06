@@ -8,6 +8,7 @@ const colouredText = (text, colour) => <span style={{color: colour}}>{text}</spa
 
 const renderLines = lines => {
   return lines.map(line => {
+    console.log(line)
     return (
       <React.Fragment key={line.id}>
         {line.cmd ? prompt : ''}
