@@ -10,7 +10,7 @@ const renderLines = lines => {
     return (
       <React.Fragment key={line.id}>
         {line.cmd ? prompt : ''}
-        {line.text}
+        {line.colour ? <span style={{color: line.colour}}>line.text</span> : line.text}
         {line.current ? cursor : ''}
         <br />
       </React.Fragment>

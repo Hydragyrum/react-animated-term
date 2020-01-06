@@ -15,7 +15,11 @@ var renderLines = function renderLines(lines) {
       React.Fragment,
       { key: line.id },
       line.cmd ? prompt : '',
-      line.text,
+      line.colour ? React.createElement(
+        'span',
+        { style: { color: line.colour } },
+        'line.text'
+      ) : line.text,
       line.current ? cursor : '',
       React.createElement('br', null)
     );
@@ -71,7 +75,7 @@ var Terminal = function Terminal(_ref) {
     { className: getWindowStyle(white) },
     React.createElement(
       'div',
-      { className: getTerminalStyle(code, height) },
+      { className: getTerminalStyle(code), style: height ? { height: height } : null },
       React.createElement(
         'div',
         { className: 'Terminal-header' },
